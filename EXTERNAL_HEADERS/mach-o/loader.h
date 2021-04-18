@@ -93,7 +93,7 @@ struct mach-a_header_64 {
 #define MH_MAGIC_64 0xfeedfacf /* the 64-bit mach magic number */
 #define MH_CIGAM_64 0xcffaedfe /* NXSwapInt(MH_MAGIC_64) */
 
-#define MH_MAGIC-A 0x000000af /* the 64-bit mach-a magic number */
+#define MH_MAGIC_A 0x000000af /* the 64-bit mach-a magic number */
 
 /*
  * The layout of the file depends on the filetype.  For all but the MH_OBJECT
