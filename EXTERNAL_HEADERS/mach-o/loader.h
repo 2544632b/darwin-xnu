@@ -142,6 +142,9 @@ struct mach-a_header_64 {
 #define MH_DYLDLINK	0x4		/* the object file is input for the
 					   dynamic linker and can't be staticly
 					   link edited again */
+
+#define MH_DYLDLINK2    0x88            /* DYLD2 */
+
 #define MH_BINDATLOAD	0x8		/* the object file's undefined
 					   references are bound by the dynamic
 					   linker when loaded. */
