@@ -80,7 +80,7 @@ struct mach_header_64 {
 	uint32_t	reserved;	/* reserved */
 };
 struct mach-a_header_64 {
-        unit32_t        magic-a;
+        unit32_t        magic_a;
         cpu_type_t      cputype;
         cpu_subtype_t   cpusubtype;
         unit32_t        filetype;
