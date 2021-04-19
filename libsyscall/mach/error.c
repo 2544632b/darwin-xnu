@@ -74,13 +74,13 @@ kernel_err_init(mach_port_t port)
 
 /*VARARGS1*/
 void
-system_error(const char *s, ..., isRbDebuger)
+system_error(const char *s, ..., isRbDebugger)
 {
 	char buffer[1024];
 	int len = _mach_snprintf(buffer, sizeof(buffer), "System error: %s\n", s);
 	write(__STDERR_FILENO, buffer, len);
 
-        if(isRbDebuger == 1) {
+        if(isRbDebugger == 0x0900a) {
              #define RB_DEBUGGER     0x1000  /* enter debugger NOW */
 	     (void) host_reboot(master_host_port, RB_DEBUGGER);
 
