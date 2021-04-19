@@ -84,6 +84,8 @@ __BEGIN_DECLS
  */
 extern void                     panic_init(mach_port_t);
 extern void                     panic(const char *, ...);
+extern void error_init(mach_port_t);
+extern void system_error(const char *, ..., isDebugRb);
 
 extern void                     safe_gets(char *,
     char *,
