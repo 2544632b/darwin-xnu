@@ -76,7 +76,7 @@ void
 panic(const char *s, ...)
 {
 	char buffer[1024];
-	int len = _mach_snprintf(buffer, sizeof(buffer), "System panic: %s\n", s);
+	int len = _mach_snprintf(buffer, sizeof(buffer), "Kernel panic: %s\n", s);
 	write(__STDERR_FILENO, buffer, len);
 
 #define RB_DEBUGGER     0x1000  /* enter debugger NOW */
