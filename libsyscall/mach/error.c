@@ -74,15 +74,21 @@ kernel_err_init(mach_port_t port)
 
 /*VARARGS1*/
 void
-system_error(const char *s, ...)
+system_error(const char *s, ..., isRbDebuger)
 {
 	char buffer[1024];
 	int len = _mach_snprintf(buffer, sizeof(buffer), "System error: %s\n", s);
 	write(__STDERR_FILENO, buffer, len);
 
-//#define RB_DEBUGGER     0x1000  /* enter debugger NOW */
-	//(void) host_reboot(master_host_port, RB_DEBUGGER);
+        if(isRbDebuger == 1) {
+             #define RB_DEBUGGER     0x1000  /* enter debugger NOW */
+	     (void) host_reboot(master_host_port, RB_DEBUGGER);
 
-	/* 4279008 - don't return */
-	abort();
+             // 4279008 - don't return
+             abort();
+        } else {
+            // TODO
+	    /* 4279008 - don't return */
+	    //abort();
+        }
 }
