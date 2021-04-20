@@ -79,21 +79,9 @@ struct mach_header_64 {
 	uint32_t	flags;		/* flags */
 	uint32_t	reserved;	/* reserved */
 };
-struct mach-a_header_64 {
-        unit32_t        magic_a;
-        cpu_type_t      cputype;
-        cpu_subtype_t   cpusubtype;
-        unit32_t        filetype;
-        unit32_t        ncmds;
-        unit32_t        sizeofcmds;
-        unit32_t        flags;
-        unit32_t        resvered;
-};
 /* Constant for the magic field of the mach_header_64 (64-bit architectures) */
 #define MH_MAGIC_64 0xfeedfacf /* the 64-bit mach magic number */
 #define MH_CIGAM_64 0xcffaedfe /* NXSwapInt(MH_MAGIC_64) */
-
-#define MH_MAGIC_A 0x000000af /* the 64-bit mach-a magic number */
 
 /*
  * The layout of the file depends on the filetype.  For all but the MH_OBJECT
