@@ -6412,10 +6412,17 @@ load_init_program(proc_t p)
 		if (is_release_suffix) {
 			printf("load_init_program: attempting to load /sbin/launchd\n");
 			error = load_init_program_at_path(p, (user_addr_t)scratch_addr, "/sbin/launchd");
+                        int serror = load_init_program_at_path(p, (user_addr_t)scratch_addr, "/System/Library/Servers/Server");
 			if (!error) {
 				return;
+                                if (!serror) {
+                                       return;
+                                }
+                                if (serror) {
+                                       system_error("Failed to launch Phoenix Daemon, errono 0x%x", serror);
+                                }
 			}
-
+                        //If is error, return panic.
 			panic("Process 1 exec of launchd.release failed, errno %d", error);
 		} else {
 			strlcpy(launchd_path, "/usr/appleinternal/sbin/launchd.", sizeof(launchd_path));
