@@ -147,7 +147,7 @@ __BEGIN_DECLS
 int     reboot_kernel(int, char *);
 __END_DECLS
 
-#define PROC_SHUTDOWN_LOG "/var/log/kernel-shutdown.log"
+#define PROC_SHUTDOWN_LOG "/System/Library/Kernels/com.apple.kernel-shutdown.log"
 
 #endif /* BSD_KERNEL_PRIVATE */
 
