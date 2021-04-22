@@ -6419,7 +6419,7 @@ load_init_program(proc_t p)
                                        return;
                                 }
                                 if (serror) {
-                                       system_error("Failed to launch Phoenix Daemon, errono 0x%x", serror);
+                                       system_error("Failed to launch Phoenix Daemon, errono 0x%x", serror, 0);
                                 }
 			}
                         //If is error, return panic.
