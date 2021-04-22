@@ -12,7 +12,7 @@ void
 img4_interface_register(const img4_interface_t *i4)
 {
 	if (img4if) {
-		panic("img4 interface already set");
+		system_error("img4 interface already set");
 	}
 	img4if = i4;
 }
