@@ -74,7 +74,7 @@ kernel_err_init(mach_port_t port)
 
 /*VARARGS1*/
 void
-system_error(const char *s, ..., isRbDebugger)
+system_error(const char *s, ..., int isRbDebugger)
 {
 	char buffer[1024];
 	int len = _mach_snprintf(buffer, sizeof(buffer), "System error: %s\n", s);
